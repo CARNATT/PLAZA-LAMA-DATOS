@@ -1,0 +1,239 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/Plaza_lama.css">
+    <title>Enviar Texto a Firebase</title>
+  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    
+</head>
+<body>
+  
+ 
+   <!-- AQUI ESTA TODO EL CÓDIGO DEL CARRUSEL-->
+   <div class="CARISEL_PRINCIPAL">
+  <div class="carousel-container">
+    <div class="carousel">
+       
+       
+      <div class="slide">
+        <img src="RECURSOS/66905a7c48e04e71f5ac0e5afae4b061.gif" alt="Bolsos 1">
+        <div class="caption">ENOJÓ</div>
+      </div>
+      
+      <div class="slide">
+        <img src="RECURSOS/608b523040822cf89b99b5bf5667f770.png.gif" alt="Bolsos 2">
+        <div class="caption">MIEDO</div>
+      </div>
+      
+      <div class="slide">
+        <img src="RECURSOS/5604c8c31f0c2c6d712b0da4f2b2e067.gif">
+        <div class="caption">PODER</div>
+      </div>
+      
+      <div class="slide">
+        <img src="RECURSOS/caro_01.jpg">
+        <div class="caption">PODER</div>
+      </div>
+      
+      <div class="slide">
+        <img src="RECURSOS/carro2.jpg">
+        <div class="caption">PODER</div>
+      </div>
+      
+      <div class="slide">
+        <img src="RECURSOS/carro_03.jpg">
+        <div class="caption">PODER
+        <p>Actualización: 2.0.5</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+  <!--  --> </div>
+  <!-- FIN DEL CÓDIGO DEL CARRUSEL-->
+  
+   
+  <!-- Menú desplegable -->
+<input type="checkbox" id="Ocultar_C" style="display: none;">
+<label class="BTS_" for="Ocultar_C">Información</label>
+<div class="ajuste_ocultar">
+   <nav>
+<div class="Contras_1">
+<button onclick="showSection('section1')">
+    <img src="RECURSOS/usuario.png" class="Bloq" alt="Icono">
+   <p>Buscar Material</p>
+   </button>
+   </div>
+
+
+<button onclick="showSection('section2')">Agrego datos</button>
+   
+   <button onclick="showSection('section3')">Opción 3</button>
+   <button onclick="showSection('section4')">Opción 4</button>
+   </nav>
+</div>
+
+<!-- Secciones de contenido -->
+<div id="section1" class="section active"><!--  -->
+<!-- FORMULARIO PARA BUSCAR DATOS -->
+<div class="CONTENIDO_REGISTRO">
+  <form onsubmit="event.preventDefault();">
+               
+     <label class="Contras" for="imageCode">
+    <img src="RECURSOS/buscar.png" class="Bloq" alt="Icono">
+    <input type="number" id="imageCode" placeholder="Buscar material" class="em" required>
+  </label>
+  
+    <button type="button" onclick="Buscar_Material_cloudinary(); Buscar_Material_firebase();">Buscar Producto</button>
+  </form>
+  <p id="generalMessage" style="color: red;"></p>
+</div>
+
+
+uu
+<!-- RESULTADOS -->
+<div class="CONTENIDO_REGISTRO_RESULTADO">
+  <div class="card">
+    <div class="CENTT">
+      <img id="resultImage" style="display: none; margin-top: 20px;" alt="Imagen encontrada" class="imag_previa">
+    </div>
+    <div id="firebaseResult" style="margin-top: 20px; color: blue;">
+      <p id="nombre"></p>
+      <p id="codigo"></p>
+      <p id="material"></p>
+      <p id="descripcion"></p>
+    </div>
+  </div>
+</div>
+  
+  
+  
+ 
+
+
+</div><!--  -->
+
+<div id="section2" class="section"><!--  -->
+
+<!-- INICIO -->
+<div class="CONTENIDO_REGISTRO">
+  <div class="COLOR">
+    <div class="logo">
+      <img src="RECURSOS/anadir.png" class="imag" alt="Usuario">
+    </div>
+    <div class="Text_central">
+      <h1>INGRESAR DATOS</h1>
+    </div>
+
+    <!-- FORMULARIO PARA AÑADIR DATOS -->
+<form id="uploadForm" class="CAJA_">
+  <label class="Contras">
+    <img src="RECURSOS/usuario.png" class="Bloq" alt="Icono">
+    <input type="text" id="Nombre_Product" placeholder="Nombre del producto" class="em">
+  </label>
+
+  <label class="Contras">
+    <img src="RECURSOS/usuario.png" class="Bloq" alt="Icono">
+    <input type="number" id="Codigo_Product" placeholder="Código del producto" class="em">
+  </label>
+
+  <label class="Contras">
+    <img src="RECURSOS/candado.png" class="Bloq" alt="Icono">
+    <input type="number" id="Material_Product" placeholder="Material" class="em">
+  </label>
+
+  <label class="Contras">
+    <img src="RECURSOS/candado.png" class="Bloq" alt="Icono">
+    <input type="text" id="Descrip_Product" placeholder="Descripción" class="em">
+  </label>
+
+  <label for="imageInput" class="Contras">
+    <input type="file" id="imageInput" accept="image/png, image/jpeg" class="emm" required>
+  </label>
+
+  <div class="CENTT">
+    <img id="imagePreview" class="imag_previa" alt="Previsualización" />
+  </div>
+
+  <div class="CENTT">
+    <img id="uploadedImage" style="display: none; max-width: 300px;" class="imag_previa" alt="Imagen subida" />
+  </div>
+
+  <div class="boton_de_registro">
+    <button type="button" class="E_Datos_A" onclick="Enviar_Product(); Enviar_Imagen();">Agregar Producto</button>
+  </div>
+</form>
+
+    <div class="no_sesion">
+      <p>¿Quieres registrarte? <a href="#">Registrarse</a></p>
+    </div>
+  </div>
+</div>
+
+</div><!--  -->
+
+
+<div id="section3" class="section"><!--  -->
+   <h2>Sección 3</h2>
+   <p>Contenido de la sección 3.</p>
+</div>
+<div id="section4" class="section"><!--  -->
+   <h2>Sección 4</h2>
+   <p>Contenido de la sección 4.</p>
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+<!-- buscar en Firebase-->
+
+
+
+<script>
+    // Tu configuración de Firebase
+    const firebaseConfig = {
+  apiKey: "AIzaSyBZG1ax_XMDC5MUuZaVrWe72zYF8lbfXTI",
+  authDomain: "plaza-lama-316cd.firebaseapp.com",
+  projectId: "plaza-lama-316cd",
+  storageBucket: "plaza-lama-316cd.firebasestorage.app",
+  messagingSenderId: "868460169243",
+  appId: "1:868460169243:web:49b766058b9825a82550be"
+};
+
+        // Inicializar Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+</script>
+
+</body>
+<script src="JS/carusel.JS"></script>
+<script src="JS/Guardar.js"></script>
+
+
+</html>
+
+
+
+
+
