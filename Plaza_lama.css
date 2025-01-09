@@ -1,0 +1,212 @@
+body {
+ 
+			padding: 40px 20px 10px 20px;
+			margin: 0px 0.15px;
+text-align: center;align-content: center;align-items: center;
+ position: relative;
+
+background: url('../RECURSOS/fondo_prueba_01.jpg');
+
+/* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);background-size: 10000rem; */
+animation: fluido 15s ease-in-out infinite;
+
+}
+ @keyframes fluido {
+    0% { background-position: 0 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0 50% }}
+
+
+
+.carousel-container {
+ overflow: hidden;
+background: rgba(255, 255, 255, 0.08);
+margin: 0px 10px 0px 10px; border-radius: 25px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.5px);
+-webkit-backdrop-filter: blur(4.5px);}
+.carousel {
+
+display: flex;
+  transition: transform 0.5s ease-in-out;padding: 0px;}
+.slide {min-width: 100%;position: relative;}
+.slide img {width: 100%;height: 100%;object-fit: cover;}
+.caption {position: absolute;bottom: 20px;
+  left: 20px;color: white;font-size: 1.2rem;font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);}
+.caption p{
+   color: white;
+}
+.dots {display: flex;justify-content: center;
+  position: absolute;bottom: 10px;width: 100%;}
+.dot {height: 10px;width: 10px;margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;cursor: pointer;background: black;}
+.dot.active {background-color: white;}
+/* FIN DEL CÓDIGO */
+
+.CONTENIDO_REGISTRO_RESULTADO {
+ /* background-image: linear-gradient(#cb69c1, #6c72cb); */
+			padding: 15px 10px 20px 10px; border-radius: 25px;
+			margin: 15px 0px;
+			text-align: center;align-content: center;
+			justify-content: center;
+			overflow: hidden;
+			/* background: rgba( 255, 255, 255, 0.1 ); */
+			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+			backdrop-filter: blur( 14px );
+			-webkit-backdrop-filter: blur( 14px );
+}
+.CONTENIDO_REGISTRO {
+ /* background-image: linear-gradient(#cb69c1, #6c72cb); */
+			padding: 60px 10px 20px 10px; border-radius: 25px;
+			margin: 0;
+			text-align: center;align-content: center;
+			justify-content: center;
+			overflow: hidden;
+			/* background: rgba( 255, 255, 255, 0.1 ); */
+			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+			backdrop-filter: blur( 14px );
+			-webkit-backdrop-filter: blur( 14px );
+			
+			}
+			
+.em:hover {width: 100%; outline: none; color: #fff;
+background: transparent;
+border: solid 1px #fff;}
+.emm:hover {width: 100%; outline: none; color: #fff;
+background: transparent;
+border: solid 1px #fff;}
+.imag::selection {background: transparent;}
+.Bloq::selection {background: transparent;}
+.em::selection {background: transparent;}
+h1::selection {background: transparent;}
+p::selection {background: transparent; color: white;}
+p {color: black;}
+a::selection {color: black;}
+a:hover {background: transparent; color: black;}
+a {color: white;}
+
+::placeholder {color: #fff;}
+.imag {width: 100px; border-radius: 50px;}
+.CENTT {display: flex; align-content: center; justify-content: center;}
+.imag_previa {
+width: 90%; max-height: 300px;
+margin: 15px;border-radius: 20px;
+display: none;
+}
+.logo {text-align: center;}
+.Bloq {width: 30px; padding: 0px 10px 0px 0px;}
+.Text_central {font-size: 10px; color: black;}
+
+.Contras_1 {display: flex;
+justify-content: center; background: transparent;
+align-content: center; text-align: center;}
+
+.Contras {padding: 2px; display: flex; margin: 10px;
+justify-content: center; background: transparent;
+align-content: center; text-align: center;}
+.em {width: 80%;outline: none;
+border: solid 1px #000;
+background: transparent;
+border-radius: 5px;
+}
+.emm {
+width: 90%;height: 30px;
+outline: none;
+border: solid 1px #000;
+background: tan;
+border-radius: 5px;
+padding: 10px;
+
+}
+
+/* BOTONES */
+.boton_de_registro {margin: 30px 0px;text-align: center;}
+.E_Datos_A:hover {border: solid 1px #fff; color: #000;}
+.E_Datos_A::selection {background: transparent;}
+.E_Datos_A {border-radius: 5px;padding: 10px 40px;
+background: transparent; color: #fff;
+border: solid 1px #000;}
+/* BOTONES */
+
+
+/* carta de Firebase y Cloudinary */
+/*  */
+/* Estilos para ocultar el checkbox */
+input[type="checkbox"]#Ocultar_C {
+   display: none;
+}
+
+/* Estilo del botón "Información" */
+label.BTS_ {
+   display: inline-block;
+   padding: 10px 20px;
+   background-color: #4CAF50;
+   color: white;
+   font-size: 16px;
+   text-align: center;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+label.BTS_:hover {
+   background-color: #45a049;
+}
+
+/* Contenedor ocultable */
+.ajuste_ocultar {
+   display: none;
+   position: absolute;
+   max-width: 400px;
+   padding: 20px;
+   background: #b78;
+   justify-content: center;
+   border-radius: 30px 0 0 30px;
+   top: 0;
+   right: -170px;
+   transition: right 2s;
+   animation: fluido 15s ease-in-out infinite;
+   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+   background-size: 1000px;
+}
+
+/* Mostrar el menú cuando el checkbox está marcado */
+#Ocultar_C:checked ~ .ajuste_ocultar {
+   display: block;
+   right: -5px;
+}
+
+/* Animación para el gradiente */
+@keyframes fluido {
+   0% {background-position: 0% 50%;}
+   50% {background-position: 100% 50%;}
+   100% {background-position: 0% 50%;}}
+
+/* Botones dentro del menú */
+.ajuste_ocultar nav button {
+   display: block;
+   width: 100%;
+   margin: 10px 0;
+   padding: 10px 20px;
+   font-size: 16px;
+   color: #fff;
+   background-color: #333;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.ajuste_ocultar nav button:hover {background-color: #555;}
+/* Estilos para las secciones */
+.section {display: none;padding: 20px;
+   
+   
+   border-radius: 5px;margin: 10px 0;}
+
+.section.active {display: block;}
+.section h2 {margin-top: 0;}
+.section p {margin: 0;}
+
